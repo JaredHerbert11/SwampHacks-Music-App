@@ -9,3 +9,9 @@ class SongRec(models.Model):
 
     def _str_(self):
         return self.title
+
+class SongRecList(models.Model):
+    list = models.CharField(max_length=120)
+
+    def _str_(self):
+        return self.list

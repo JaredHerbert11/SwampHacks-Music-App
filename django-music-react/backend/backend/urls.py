@@ -21,6 +21,10 @@ from music import views                            # add this
 router = routers.DefaultRouter()                      # add this
 router.register(r'songrecs', views.SongRecView, 'songrec')     # add this
 
+router2 = routers.DefaultRouter()
+router2.register(r'songreclist', views.SongRecListView, 'songreclist')
+
 urlpatterns = [
-    path('admin/', admin.site.urls),         path('api/', include(router.urls))                # add this
+    path('admin/', admin.site.urls),         path('api/', include(router.urls)),
+    path('recommendations/', include(router2.urls))                # add this
 ]
