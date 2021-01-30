@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./form.component";
+import {Text} from "react-native";
 
 const Header = ({ history, handleSubmit }) => {
     return (
