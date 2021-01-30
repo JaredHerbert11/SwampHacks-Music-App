@@ -1,5 +1,0 @@
-numpy
-pandas
-scikitlearn
-spotipy
-youtube_dl
