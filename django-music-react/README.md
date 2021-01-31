@@ -78,3 +78,35 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## Set Up
+
+In one terminal run the following commands.
+
+`cd django-music-react`
+
+`pip install pipenv`
+
+`pipenv shell`
+
+`pipenv install django`
+
+`pipenv install djangorestframework django-cors-headers`
+
+`pipenv install -r music/requirements.txt`
+
+`python manage.py makemigrations todo`
+
+`python manage.py migrate todo`
+
+`python manage.py runserver`
+
+In a second terminal run the following commands
+
+`cd django-music-react`
+
+`npm install`
+
+`npm start`
