@@ -3,3 +3,4 @@ pandas
 sklearn
 spotipy
 youtube_dl
+python-dotenv
