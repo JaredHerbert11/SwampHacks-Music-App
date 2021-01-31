@@ -25,13 +25,20 @@ class App extends Component {
     e.currentTarget.reset();
     let url = `/results/${searchInput}`;
     history.push(url);
-    this.getRecs();
+    this.getRecs(searchInput);
   };
 
-  getRecs = () => {
-    axios.get("http://localhost:8000/api/tools")
+  getRecs = (searchInput) => {
+    let str1 = "http://localhost:8000/api/songrecs/"
+    let str2 = searchInput.split('?')[1];
+    console.log(str1.concat(str2))
+    axios({
+      method: 'get',
+      url: str1.concat(str2),
+      responseType: 'json'})
       .then(res => this.setState({ recs: res.data }))
       .catch(err => console.log(err));
+    console.log(this.state.recs);
     
   }
 
@@ -54,6 +61,12 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
+        <ul>
+          {this.state.recs.map(function(listValue){
+            return <li>{listValue}</li>;
+          })}
+        </ul>
+
       </div>
     );
   }

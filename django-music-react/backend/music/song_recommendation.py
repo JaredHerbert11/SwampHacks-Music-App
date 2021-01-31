@@ -13,8 +13,8 @@ loudness_max = 3.855
 loudness_min = -60
 
 ##Spotify API Credentials
-sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="b8f8407e9b10446b82f00dfc1c71c60b",
-                                                            client_secret="973ca784cdd34701af4c2e0ca3b82b76"))
+sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(client_id="5e7d0ea522754225bbad80ff140beb22",
+                                                            client_secret="60e9d332df864f8fa251ff732989f6a1"))
 
 ydl = youtube_dl.YoutubeDL({})
 
