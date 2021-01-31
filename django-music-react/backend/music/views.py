@@ -21,6 +21,6 @@ def songrec_list(request, pk):
         print(url)
         df = getRecommendedSongs(url)
         for index, row in df.iterrows():
-            reclist.append(SongRec(name=row['name'], album=row['album'], artist=row['artists'], external_url=row['external_url'], preview_url=row['preview_url']))
+            reclist.append(SongRec(name=row['name'], album=row['album'], album_id = row['album_id'], artist=row['artists'], external_url=row['external_url'], preview_url=row['preview_url']))
         reclist_serializer = SongRecSerializer(reclist, many=True)
         return JsonResponse(reclist_serializer.data, safe=False)
