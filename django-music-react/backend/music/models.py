@@ -6,6 +6,7 @@ class SongRec(models.Model):
     name = models.CharField(max_length=120)
     artist = models.CharField(max_length=120)
     album = models.CharField(max_length=120)
+    album_id = models.CharField(max_length=180)
     external_url = models.CharField(max_length=200)
     preview_url = models.CharField(max_length=200)
 
