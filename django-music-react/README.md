@@ -1,3 +1,14 @@
+Song Explore is a tool that can be used to take any Youtube link and reccomend 10 songs based on a variety of features and machine learning algorithms. It relies on many APIs including Youtube API, Spotify API, Genius API to get reccomended songs.
+
+# How to Set Up Spotify Credentials:
+If you don't have spotify credentials or number of requests becomes too many, you may need to either reset your spotify credentials or create new ones.
+For that:
+Go to: https://developer.spotify.com/dashboard/applications
+Login and create an application.
+Afterwards you will recieve both a client_id and client_secret_id.
+
+Replace the strings in lines 16-17 of backend/music/song_recommendation.py with these keys to make the code work.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,34 +79,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-
-## Set Up
-
-In one terminal run the following commands.
-
-`cd django-music-react`
-
-`pip install pipenv`
-
-`pipenv shell`
-
-`pipenv install django`
-
-`pipenv install djangorestframework django-cors-headers`
-
-`pipenv install -r music/requirements.txt`
-
-`python manage.py makemigrations todo`
-
-`python manage.py migrate todo`
-
-`python manage.py runserver`
-
-In a second terminal run the following commands
-
-`cd django-music-react`
-
-`npm install`
-
-`npm start`
