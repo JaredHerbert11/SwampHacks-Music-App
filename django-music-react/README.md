@@ -97,9 +97,11 @@ In one terminal run the following commands.
 
 `pipenv install -r music/requirements.txt`
 
-`python manage.py makemigrations todo`
+'cd backend'
 
-`python manage.py migrate todo`
+`python manage.py makemigrations music`
+
+`python manage.py migrate music`
 
 `python manage.py runserver`
 
