@@ -12,12 +12,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      recs: []
+      recs: ["blah"]
     };
   }
 
   componentDidMount() {
-    this.setState({ recs: [] });
+    //this.setState({ recs: [] });
   }
 
   handleSubmit = (e, history, searchInput) => {
@@ -32,13 +32,11 @@ class App extends Component {
     let str1 = "http://localhost:8000/api/songrecs/"
     let str2 = searchInput.split('?')[1];
     console.log(str1.concat(str2))
-    axios({
-      method: 'get',
-      url: str1.concat(str2),
-      responseType: 'json'})
-      .then(res => this.setState({ recs: res.data }))
+    axios.get(str1.concat(str2))
+      .then(res => this.setState({ recs: res.data }, () => {
+        console.log(this.state.recs);
+      }))
       .catch(err => console.log(err));
-    console.log(this.state.recs);
     
   }
 
@@ -61,12 +59,6 @@ class App extends Component {
             <Route component={NotFound} />
           </Switch>
         </Router>
-        <ul>
-          {this.state.recs.map(function(listValue){
-            return <li>{listValue}</li>;
-          })}
-        </ul>
-
       </div>
     );
   }
