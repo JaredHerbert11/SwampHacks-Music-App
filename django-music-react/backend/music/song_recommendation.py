@@ -52,19 +52,20 @@ def generateInitialReccomendationDataset(Spotify_ID):
     feature_df = pd.DataFrame(features)
     feature_df['name'] = list(reccomended_track_info_df['name'])
     feature_df['album'] = [x['name'] for x in reccomended_track_info_df['album']]
+    feature_df['album_id'] = [x['id'] for x in reccomended_track_info_df['album']]
     feature_df['artists'] = [x[0]['name'] for x in reccomended_track_info_df['artists']]
     feature_df['id'] = list(reccomended_track_info_df['id'])
     feature_df['external_url'] = [x['spotify'] for x in reccomended_track_info_df['external_urls']]
     feature_df['preview_url'] = list(reccomended_track_info_df['preview_url'])
     feature_df['popularity'] = list(reccomended_track_info_df['popularity'])
-    feature_df = feature_df[['name','album','artists','id','external_url','preview_url','popularity','acousticness','danceability','duration_ms','energy','instrumentalness','key','liveness','loudness','speechiness','tempo','valence']]
+    feature_df = feature_df[['name','album','album_id','artists','id','external_url','preview_url','popularity','acousticness','danceability','duration_ms','energy','instrumentalness','key','liveness','loudness','speechiness','tempo','valence']]
     feature_df = feature_df.reset_index(drop = True)
     return feature_df
 
 def top_n_similar_songs(song_vector, song_database, num_songs=10):
     """Run Cosine Similarity Metric with song_vector and your database to find the top 10 out of 100 most similar songs based on these 
     audio features: 'acousticness','danceability','duration_ms','energy','instrumentalness','key','liveness','loudness','speechiness','tempo','valence'"""
-    song_database["distances"] = cosine_similarity(song_database.iloc[:,7:], song_vector)
+    song_database["distances"] = cosine_similarity(song_database.iloc[:,8:], song_vector)
     list_of_indexes = list(song_database["distances"].nlargest(num_songs).index)
     top_n_similar_songs = song_database.iloc[list_of_indexes, :]    
     return top_n_similar_songs
