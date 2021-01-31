@@ -79,8 +79,16 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE' : 'django_cockroachdb',
+        'USER' : 'swamphacks_music',
+        'PASSWORD': 'swamphacks2021',
+        'HOST' : 'fluffy-puma-8jn.gcp-us-east1.cockroachlabs.cloud', # Might need me to whitelist your IP
+        'PORT' : 26257,
+        'NAME' : 'song_info',
+        'OPTIONS': {
+            'sslmode': 'verify-full',
+            'sslrootcert': 'E:/SwampHacks-Music-App/django-music-react/backend/backend/certs/fluffy-puma-ca.crt', #Switch this to the path of wherever you put the file on your local machine
+        },
     }
 }
 
