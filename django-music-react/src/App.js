@@ -70,18 +70,32 @@ class App extends Component {
     const recsNotNull = this.state.recs.length !== 0;
     let songs;
     if (recsNotNull) {
+      const styleObj = {
+        fontSize: 40,
+        color: "white",
+        }
       songs = <>
-                <div>1. {this.state.recs[0].name} by {this.state.recs[0].artist}</div>
-                <div>2. {this.state.recs[1].name} by {this.state.recs[1].artist}</div>
-                <div>3. {this.state.recs[2].name} by {this.state.recs[2].artist}</div>
-                <div>4. {this.state.recs[3].name} by {this.state.recs[3].artist}</div>
-                <div>5. {this.state.recs[4].name} by {this.state.recs[4].artist}</div>
-                <div>6. {this.state.recs[5].name} by {this.state.recs[5].artist}</div>
-                <div>7. {this.state.recs[6].name} by {this.state.recs[6].artist}</div>
-                <div>8. {this.state.recs[7].name} by {this.state.recs[7].artist}</div>
-                <div>9. {this.state.recs[8].name} by {this.state.recs[8].artist}</div>
-                <div>10. {this.state.recs[9].name} by {this.state.recs[9].artist}</div>
-              </>
+                <div style = {styleObj}>1. {this.state.recs[0].name} by {this.state.recs[0].artist}</div> 
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[0].album_id} width="800" height="200" padding-bottom = "25" />
+                <div style = {styleObj}>2. {this.state.recs[1].name} by {this.state.recs[1].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[1].album_id} width="800" height="200"/>
+                <div style = {styleObj}>3. {this.state.recs[2].name} by {this.state.recs[2].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[2].album_id} width="800" height="200"/>
+                <div style = {styleObj}>4. {this.state.recs[3].name} by {this.state.recs[3].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[3].album_id} width="800" height="200"/>
+                <div style = {styleObj}>5. {this.state.recs[4].name} by {this.state.recs[4].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[4].album_id} width="800" height="200"/>
+                <div style = {styleObj}>6. {this.state.recs[5].name} by {this.state.recs[5].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[5].album_id} width="800" height="200"/>
+                <div style = {styleObj}>7. {this.state.recs[6].name} by {this.state.recs[6].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[6].album_id} width="800" height="200"/>
+                <div style = {styleObj}>8. {this.state.recs[7].name} by {this.state.recs[7].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[7].album_id} width="800" height="200"/>
+                <div style = {styleObj}>9. {this.state.recs[8].name} by {this.state.recs[8].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[8].album_id} width="800" height="200"/>
+                <div style = {styleObj}>10. {this.state.recs[9].name} by {this.state.recs[9].artist}</div>
+                <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[9].album_id} width="800" height="200"/>
+              </> 
     }
     else {
       songs = <div></div>
