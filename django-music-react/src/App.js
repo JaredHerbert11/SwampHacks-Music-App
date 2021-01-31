@@ -57,6 +57,7 @@ class App extends Component {
     let str1 = "http://localhost:8000/api/songrecs/"
     let str2 = searchInput.split('?')[1];
     console.log(str1.concat(str2))
+    this.setState({recs: []});
     await axios.get(str1.concat(str2))
       .then(res => this.setState({ recs: res.data }, () => {
         console.log(this.state.recs);
@@ -69,11 +70,11 @@ class App extends Component {
   render() {
     const recsNotNull = this.state.recs.length !== 0;
     let songs;
+    const styleObj = {
+      fontSize: 40,
+      color: "white",
+      }
     if (recsNotNull) {
-      const styleObj = {
-        fontSize: 40,
-        color: "white",
-        }
       songs = <>
                 <div style = {styleObj}>1. {this.state.recs[0].name} by {this.state.recs[0].artist}</div> 
                 <iframe src={"https://open.spotify.com/embed/album/" + this.state.recs[0].album_id} width="800" height="200" padding-bottom = "25" />
@@ -98,7 +99,7 @@ class App extends Component {
               </> 
     }
     else {
-      songs = <div></div>
+      songs = <div style = {styleObj}>Loading...</div>
     }
 
     return (

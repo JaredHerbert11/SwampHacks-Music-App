@@ -8,6 +8,11 @@ const Form = ({ handleSubmit, history }) => {
         setSearchEntry(e.target.value);
     };
 
+    const styleObj = {
+        fontSize: 25,
+        color: "#2a1b3d",
+        }
+
     return (
         <form
             className="search-form"
@@ -22,9 +27,10 @@ const Form = ({ handleSubmit, history }) => {
             />
             <button
                 type="submit"
+                size="lg"
                 className={`search-button ${searchEntry.trim() ? "active" : null}`}
                 disabled={!searchEntry.trim()}
-            ><Text style={{color: '#000000'}}>Find Similar Songs</Text></button>
+            ><Text style={styleObj}>Find Similar Songs</Text></button>
         </form>
     );
 };
