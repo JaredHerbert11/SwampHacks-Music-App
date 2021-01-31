@@ -1,2 +1,2 @@
 node_modules
-backend/music/spoitify_ids.env
+*.env
