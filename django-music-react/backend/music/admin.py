@@ -3,6 +3,6 @@ from .models import SongRec
 # Register your models here.
 
 class SongRecAdmin(admin.ModelAdmin):
-    list_display = ('name', 'artist', 'album', 'external_url', 'preview_url')
+    list_display = ('name', 'artist', 'album','album_id', 'external_url', 'preview_url')
 
 admin.site.register(SongRec, SongRecAdmin)
