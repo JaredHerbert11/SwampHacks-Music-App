@@ -1,11 +1,11 @@
 Song Explore is a tool that can be used to take any Youtube link and reccomend 10 songs based on a variety of features and machine learning algorithms. It relies on many APIs including Youtube API, Spotify API, Genius API to get reccomended songs.
 
 # How to Set Up Spotify Credentials:
-If you don't have spotify credentials or number of requests becomes too many, you may need to either reset your spotify credentials or create new ones.\n
-For that:\n
-Go to: https://developer.spotify.com/dashboard/applications \n
-Login and create an application. \n
-Afterwards you will recieve both a client_id and client_secret_id. \n
+If you don't have spotify credentials or number of requests becomes too many, you may need to either reset your spotify credentials or create new ones. <br>
+For that: <br>
+Go to: https://developer.spotify.com/dashboard/applications <br>
+Login and create an application. <br>
+Afterwards you will recieve both a client_id and client_secret_id. <br>
 Replace the strings in lines 16-17 of backend/music/song_recommendation.py with these keys to make the code work.
 
 # Getting Started with Create React App
