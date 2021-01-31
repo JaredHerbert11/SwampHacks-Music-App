@@ -69,7 +69,7 @@ def top_n_similar_songs(song_vector, song_database, num_songs=10):
     top_n_similar_songs = song_database.iloc[list_of_indexes, :]    
     return top_n_similar_songs
 
-def getReccomendedSongs(youtube_link):
+def getRecommendedSongs(youtube_link):
     with ydl:
         video = ydl.extract_info(youtube_link, download=False)
     id = get_spotify_id(video['track'],video['artist'])
@@ -80,7 +80,7 @@ def getReccomendedSongs(youtube_link):
     return top_n_dropped
 
 def __main__():
-    print(getReccomendedSongs("https://www.youtube.com/watch?v=XXYlFuWEuKI&ab_channel=TheWeekndVEVO"));
+    print(getRecommendedSongs("https://www.youtube.com/watch?v=XXYlFuWEuKI&ab_channel=TheWeekndVEVO"));
 
 if __name__ == "__main__":
     __main__()

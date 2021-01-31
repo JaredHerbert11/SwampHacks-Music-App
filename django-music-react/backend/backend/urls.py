@@ -14,17 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include                 # add this
-from rest_framework import routers                    # add this
+from django.conf.urls import url 
+
 from music import views                            # add this
 
-router = routers.DefaultRouter()                      # add this
-router.register(r'songrecs', views.SongRecView, 'songrec')     # add this
-
-router2 = routers.DefaultRouter()
-router2.register(r'songreclist', views.SongRecListView, 'songreclist')
-
 urlpatterns = [
-    path('admin/', admin.site.urls),         path('api/', include(router.urls)),
-    path('recommendations/', include(router2.urls))                # add this
+    url(r'^admin/', admin.site.urls),         url(r'^api/songrecs/(?P<pk>[a-zA-Z0-9&_\.:\/\?=]+)', views.songrec_list)
 ]
